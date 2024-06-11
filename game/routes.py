@@ -1,7 +1,7 @@
+# game/routes.py
+
 from flask import Blueprint, render_template
+from .views import setup_views
 
 game_bp = Blueprint('game', __name__, template_folder='templates')
-
-@game_bp.route('/')
-def index():
-    return render_template('index.html')
+setup_views(game_bp)
