@@ -1,40 +1,15 @@
-import sqlite3
-
 from game.models import db, item, monster
 
-def connect_db():
-    return sqlite3.connect('game.db')
-
-def create_tables():
-    conn = connect_db()
-    cursor = conn.cursor()
-
-    # Read SQL commands from schema.sql file and execute them
-    with open('schema.sql', 'r') as schema_file:
-        schema_commands = schema_file.read()
-        cursor.executescript(schema_commands)
-
-    conn.commit()
-    conn.close()
-
 def get_monster(monster_id):
-    conn = connect_db()
-    cursor = conn.cursor()
-    cursor.execute("SELECT name, health, damage FROM monster WHERE id=?", (monster_id,))
-    result = cursor.fetchone()
-    conn.close()
-    if result:
-        return {'name': result[0], 'health': result[1], 'damage': result[2]}
+    monster = monster.query.filter_by(id=monster_id).first()
+    if monster:
+        return {'name': monster.name, 'health': monster.health, 'damage': monster.damage}
     return None
 
 def get_item(item_id):
-    conn = connect_db()
-    cursor = conn.cursor()
-    cursor.execute("SELECT name, damage, heal FROM item WHERE id=?", (item_id,))
-    result = cursor.fetchone()
-    conn.close()
-    if result:
-        return {'name': result[0], 'damage': result[1], 'heal': result[2]}
+    item = item.query.filter_by(id=item_id).first()
+    if item:
+        return {'name': item.name, 'damage': item.damage, 'heal': item.heal}
     return None
 
 def get_item_from_db(item_id):
@@ -52,7 +27,6 @@ def get_monster_from_db(monster_id):
 # Initialize database within Flask application context
 def init_db(app):
     with app.app_context():
-        create_tables()
 
         # Add initial items
         

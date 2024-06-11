@@ -9,7 +9,6 @@ def initialize_starter_inventory():
         get_item_from_db(10),  # Health Potion
     ]
     return starter_inventory
-
 class GameState:
     location = None  # Define the location attribute at the class level
 

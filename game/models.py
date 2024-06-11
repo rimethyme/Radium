@@ -1,22 +1,20 @@
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy import create_engine
 
 db = SQLAlchemy()
 
-engine = create_engine('sqlite:///game.db')
+class monster(db.Model):
+    __tablename__ = 'monster'
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(100))
+    health = db.Column(db.Integer)
+    damage = db.Column(db.Integer)
 
 class item(db.Model):
+    __tablename__ = 'item'
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(50), unique=True, nullable=False)
-    damage = db.Column(db.Integer, nullable=True)
-    heal = db.Column(db.Integer, nullable=True)
-    description = db.Column(db.String(200), nullable=True)  # Added description field
-
-class monster(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(50), unique=True, nullable=False)
-    health = db.Column(db.Integer, nullable=False)
-    damage = db.Column(db.Integer, nullable=False)
+    name = db.Column(db.String(100))
+    damage = db.Column(db.Integer)
+    heal = db.Column(db.Integer)
 
 class PlayerInventory(db.Model):
     id = db.Column(db.Integer, primary_key=True)
