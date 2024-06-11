@@ -1,5 +1,3 @@
-print("Executing app.py")
-
 import sys
 import os
 from flask import Flask, jsonify, render_template, request
@@ -22,11 +20,6 @@ def create_app():
 
     # Register blueprints
     app.register_blueprint(game_bp)
-
-    if __name__ == "__main__":
-        print("Executing __main__ block")
-        game_state = GameState(app)  # Pass the app instance to GameState
-        description = game_state.get_description()  # Call the get_description method on the instance
 
     @app.route('/start')
     def start_game_route():
@@ -66,6 +59,14 @@ def create_app():
             return jsonify(result)
 
     return app
+
+if __name__ == "__main__":
+    app = create_app()
+    print("Executing __main__ block")
+    game_state = GameState(app)  # Pass the app instance to GameState
+    description = game_state.get_description()  # Call the get_description method on the instance
+    app.run()
+
 
 
 def handle_command(command):
