@@ -1,8 +1,8 @@
-from models import db, Item
+from models import db, item
 
 def use_quest_item(item_name):
     # Query the item from the database
-    item = Item.query.filter_by(name=item_name).first()
+    item = item.query.filter_by(name=item_name).first()
 
     # Check if the item exists and is a quest item
     if item and item.is_quest_item:
@@ -19,7 +19,7 @@ def use_quest_item(item_name):
 
 def use_stackable_item(item_name):
     # Query the item from the database
-    item = Item.query.filter_by(name=item_name).first()
+    item = item.query.filter_by(name=item_name).first()
 
     # Check if the item exists and is stackable
     if item and item.is_stackable:
