@@ -12,7 +12,8 @@ def initialize_starter_inventory():
 class GameState:
     location = None  # Define the location attribute at the class level
 
-    def __init__(self):
+    def __init__(self, app):
+        self.app = app
         self.player = Player('Hero')
         self.previous_location = None
         self.location = 'base_of_the_tower'
@@ -45,28 +46,29 @@ class GameState:
         }
 
     def get_description(self):
-        description = f"You are at {self.location}.\n"
+        with self.app.app_context():  # Use Flask app context for database operations
+            description = f"You are at {self.location}.\n"
+            
+            # Check if there are items in the current location
+            if self.location_items.get(self.location):
+                description += "You see the following items:\n"
+                for item in self.location_items[self.location]:
+                    description += f"- {item.name}\n"
+            
+            # Check if there are monsters in the current location
+            if self.location_monsters.get(self.location):
+                description += "You are facing the following monsters:\n"
+                for monster in self.location_monsters[self.location]:
+                    description += f"- {monster.name} (Health: {monster.health}, Damage: {monster.damage})\n"
+            
+            return description.strip()
         
-        # Check if there are items in the current location
-        if self.location_items.get(self.location):
-            description += "You see the following items:\n"
-            for item in self.location_items[self.location]:
-                description += f"- {item.name}\n"
-        
-        # Check if there are monsters in the current location
-        if self.location_monsters.get(self.location):
-            description += "You are facing the following monsters:\n"
-            for monster in self.location_monsters[self.location]:
-                description += f"- {monster.name} (Health: {monster.health}, Damage: {monster.damage})\n"
-        
-        return description.strip()
-    
     def list_items(self):
         inventory_list = "Inventory:\n"
         for item in self.player.inventory:
             inventory_list += f"- {item.name}\n"
         return inventory_list.strip()
-       
+    
 # Create an instance of GameState
 game_state = GameState()
 

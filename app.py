@@ -21,6 +21,10 @@ def create_app():
     # Register blueprints
     app.register_blueprint(game_bp)
 
+    if __name__ == "__main__":
+        game_state = GameState(app)  # Pass the app instance to GameState
+        description = game_state.get_description()  # Call the get_description method on the instance
+
     @app.route('/start')
     def start_game_route():
         with app.app_context():
