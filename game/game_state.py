@@ -1,4 +1,5 @@
 from game.inventory import Player
+from game.models import PlayerInventory
 from db_setup import get_item_from_db, get_monster_from_db  # Import functions from db_setup.py
 
 # Function to initialize starter inventory
