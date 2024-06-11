@@ -21,10 +21,6 @@ def create_app():
     # Register blueprints
     app.register_blueprint(game_bp)
 
-    @app.route('/')
-    def index():
-        return render_template('index.html')
-
     @app.route('/start')
     def start_game_route():
         GameState.location, GameState.inventory = initialize_game_world()
@@ -59,6 +55,7 @@ def create_app():
         return jsonify(result)
 
     return app
+
 
 def handle_command(command):
     GameState
