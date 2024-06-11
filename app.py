@@ -2,7 +2,7 @@ import sys
 import os
 from flask import Flask, jsonify, render_template, request
 from game.models import db 
-from game.views import game_bp  # Import the blueprint
+from game.routes import game_bp  # Import the blueprint
 from game.command_parser import parse_command, initialize_game_world
 from game.combat import combat
 from game.inventory import add_item, use_item
