@@ -2,6 +2,7 @@ import sys
 import os
 from flask import Flask, jsonify, render_template, request
 from game.models import db 
+from db_setup import create_tables
 from game.routes import game_bp  # Import the blueprint
 from game.command_parser import parse_command, initialize_game_world
 from game.combat import combat
@@ -17,6 +18,10 @@ def create_app():
 
     # Initialize SQLAlchemy with the Flask app
     db.init_app(app)
+
+     # Create tables
+    with app.app_context():
+        create_tables()
 
     # Register blueprints
     app.register_blueprint(game_bp)

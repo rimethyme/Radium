@@ -1,9 +1,6 @@
 import sqlite3
-from flask_sqlalchemy import SQLAlchemy
 
-from game.models import item, monster
-
-db = SQLAlchemy()
+from game.models import db, item, monster
 
 def connect_db():
     return sqlite3.connect('game.db')
@@ -12,46 +9,10 @@ def create_tables():
     conn = connect_db()
     cursor = conn.cursor()
 
-    # Create player_inventory table
-    cursor.execute("""
-        CREATE TABLE IF NOT EXISTS player_inventory (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            health INTEGER NOT NULL,
-            max_health INTEGER NOT NULL
-        )
-    """)
-
-    # Create item table
-    cursor.execute("""
-        CREATE TABLE IF NOT EXISTS item (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            name TEXT NOT NULL UNIQUE,
-            damage INTEGER,
-            heal INTEGER,
-            type TEXT NOT NULL
-        )
-    """)
-
-    # Create monster table
-    cursor.execute("""
-        CREATE TABLE IF NOT EXISTS monster (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            name TEXT NOT NULL UNIQUE,
-            health INTEGER NOT NULL,
-            damage INTEGER NOT NULL
-        )
-    """)
-
-    # Create inventory_items table
-    cursor.execute("""
-        CREATE TABLE IF NOT EXISTS inventory_items (
-            player_inventory_id INTEGER,
-            item_id INTEGER,
-            PRIMARY KEY (player_inventory_id, item_id),
-            FOREIGN KEY (player_inventory_id) REFERENCES player_inventory (id),
-            FOREIGN KEY (item_id) REFERENCES item (id)
-        )
-    """)
+    # Read SQL commands from schema.sql file and execute them
+    with open('schema.sql', 'r') as schema_file:
+        schema_commands = schema_file.read()
+        cursor.executescript(schema_commands)
 
     conn.commit()
     conn.close()
