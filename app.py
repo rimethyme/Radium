@@ -23,9 +23,10 @@ def create_app():
 
     @app.route('/start')
     def start_game_route():
-        GameState.location, GameState.inventory = initialize_game_world()
-        GameState.update_location(GameState.location)  # Update the location
-        return GameState.get_description()
+        with app.app_context():
+            GameState.location, GameState.inventory = initialize_game_world()
+            GameState.update_location(GameState.location)  # Update the location
+            return GameState.get_description()
 
     @app.route('/command', methods=['POST'])
     def command():
@@ -36,23 +37,26 @@ def create_app():
 
     @app.route('/combat', methods=['POST'])
     def handle_combat():
-        player_inventory = PlayerInventory.query.first()  # A single player for now
-        monster_id = request.json['monster_id']
-        monster = monster.query.get(monster_id)  # assuming Monster is the model for monsters
-        result = combat(player_inventory, monster)
-        return jsonify(result)
+        with app.app_context():
+            player_inventory = PlayerInventory.query.first()  # A single player for now
+            monster_id = request.json['monster_id']
+            monster = monster.query.get(monster_id)  # Assuming Monster is the model for monsters
+            result = combat(player_inventory, monster)
+            return jsonify(result)
 
     @app.route('/inventory/add', methods=['POST'])
     def handle_add_item():
-        item_name = request.json['item_name']
-        result = add_item(item_name)
-        return jsonify(result)
+        with app.app_context():
+            item_name = request.json['item_name']
+            result = add_item(item_name)
+            return jsonify(result)
 
     @app.route('/inventory/use', methods=['POST'])
     def handle_use_item():
-        item_name = request.json['item_name']
-        result = use_item(item_name)
-        return jsonify(result)
+        with app.app_context():
+            item_name = request.json['item_name']
+            result = use_item(item_name)
+            return jsonify(result)
 
     return app
 
@@ -66,9 +70,10 @@ def handle_command(command):
             direction = ' '.join(params)
             new_location = determine_new_location(direction)
             if new_location:
-                GameState.change_location(new_location)
-                GameState.update_location(GameState.location)  # Update the location
-                response = GameState.get_description()
+                with app.app_context():
+                    GameState.change_location(new_location)
+                    GameState.update_location(GameState.location)  # Update the location
+                    response = GameState.get_description()
             else:
                 response = "You can't go that way."
         else:

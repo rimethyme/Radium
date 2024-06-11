@@ -1,14 +1,14 @@
 from game.models import db, item, monster
 
 def get_monster(monster_id):
-    monster = monster.query.filter_by(id=monster_id).first()
-    if monster:
+    monster_instance = monster.query.filter_by(id=monster_id).first()
+    if monster_instance:
         return {'name': monster.name, 'health': monster.health, 'damage': monster.damage}
     return None
 
 def get_item(item_id):
-    item = item.query.filter_by(id=item_id).first()
-    if item:
+    item_instance = item.query.filter_by(id=item_id).first()
+    if item_instance:
         return {'name': item.name, 'damage': item.damage, 'heal': item.heal}
     return None
 
