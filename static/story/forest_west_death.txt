@@ -1,0 +1,3 @@
+Ignoring the warning, you press on. Suddenly, the trees and plants come alive, their branches and roots wrapping around you. You struggle, but it's no use. The forest consumes you.
+
+To try again, type 'restart.'

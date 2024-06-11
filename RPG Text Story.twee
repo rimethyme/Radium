@@ -1,0 +1,471 @@
+:: StoryTitle
+RPG Text Story
+
+
+:: StoryData
+{
+  "ifid": "F96E898F-8F6D-4565-AEF6-31FD5A862A0E",
+  "format": "Harlowe",
+  "format-version": "3.3.8",
+  "start": "Base of the Tower",
+  "zoom": 1
+}
+
+
+:: \ Box Death {"position":"1025,2750","size":"100,100"}
+Title: Box Death
+
+You decide you are going to risk it. Just as you have managed to squeeze yourself inside, several of the large boxes stacked super poorly come falling down on top of you.
+
+[[Restart from the entryway|Tower First Floor]]
+
+
+:: Base of the Tower {"position":"100,3000","size":"100,100"}
+Title: Base of the Tower
+
+You stand at the base of the ominous Tower of Valthor. The sky above is a swirling mass of dark clouds, and a chilling wind whispers through the surrounding trees. You know that within this tower lies the source of the terror that has plagued the nearby villages, including your own.
+
+To the north, a dense, creepy forest stretches out, its dark canopy blocking out most of the light. To the west, you see the edge of a marsh, with stagnant water and overgrown vegetation. To the east, you see a ruined guardhouse. The road back to the village lies to the south.
+
+[[Go north to the forest|Forest Entrance]]
+[[Go west to the marsh|Marsh]]
+[[Go east to the guardhouse|Guardhouse]]
+[[Enter the tower|Tower Entrance]]
+[[Return to the village|Return to Village]]
+
+
+
+:: Basement Level 1 {"position":"1300,3200","size":"100,100"}
+
+
+
+:: Cave Death {"position":"900,3300","size":"100,100"}
+Title: Cave Death
+
+You step into the cave without a light source. After a few steps, you lose your footing and fall into a deep chasm. The fall is fatal.
+
+[[Restart from the forest entrance|Forest Entrance]]
+
+
+
+:: Cave Entrance {"position":"900,3100","size":"100,100"}
+Title: Cave Entrance
+
+You light your torch and step into the cave. The flickering light reveals a narrow tunnel leading deeper underground.
+
+[[Follow the tunnel|Cave Tunnel]]
+
+
+
+:: Cave Tunnel {"position":"1000,3000","size":"100,100"}
+Title: Cave Tunnel
+
+The tunnel winds through the rock, eventually opening into the basement level of the tower.
+
+[[Continue to Basement Level 1|Basement Level 1]]
+
+
+
+:: Chest {"position":"500,2700","size":"100,100"}
+\:: Chest
+You approach the massive chest and cautiously lift the lid further. Inside, you find a few items tucked away amidst the dust and cobwebs.
+
+Among the contents, you find a small vial containing a shimmering liquid. It appears to be a potion of healing, a rare find indeed.
+
+Do you take the potion?
+
+[[Take the potion|Take Potion]]
+[[Leave the potion and continue exploring|Guardhouse]]
+
+
+:: Door East {"position":"1400,2400","size":"100,100"}
+
+
+
+:: Door North {"position":"1000,2400","size":"100,100"}
+
+
+
+:: Door stuck {"position":"900,2825","size":"100,100"}
+Title: Door Stuck
+
+Unfortunately, the door appears to be jammed shut.
+
+[[Back to the hallway|Hallway West 1 Floor 1]]
+
+
+:: End - Village {"position":"100,2800","size":"100,100"}
+Title: End - Village
+
+You have chosen to return to the village, abandoning your quest. The village remains under the shadow of the mage's terror.
+
+[[Start over|Base of the Tower]]
+
+
+
+:: Enter Password {"position":"600,2900","size":"100,100"}
+\:: Enter Password
+You carefully speak the word "SCION" aloud, the ancient password echoing through the air. To your surprise, the door begins to creak open, revealing a dark passage beyond. With a sense of trepidation, you step through the threshold and into the tower.
+<<set $has_password = true>>
+
+[[Enter the tower|Tower First Floor]]
+
+
+:: FFWH Door 2 {"position":"900,2500","size":"100,100"}
+Title: Door 2
+
+The door opens to reveal a room crammed full of boxes. You can't even open it all the way because it is so full. You can try to squeeze inside, but you are unsure of the stability of those boxes. Some are not stacked too well
+
+[[Try to squeeze inside| Box Death]]
+[[Go back to the hallway|Hallway West 1 Floor 1]]
+
+
+
+:: FFWH Door 3 {"position":"800,2600","size":"100,100"}
+Title: Door 3
+
+You cautiously approach the third door on the left and press your ear against its weathered surface, straining to hear any sounds emanating from within. After a moment, you detect a faint rustling, accompanied by an ominous growl that sends a shiver down your spine. Steeling yourself for whatever may lie ahead, you slowly push open the door and step into the room beyond.
+
+Inside, you are met with a chilling sight: a grotesque creature, its eyes gleaming with malice, lurks in the shadows, poised to strike. You have but a moment to decide how to proceed. Will you [[attack]] the creature, attempt to [[talk]] to it, or [[run]] for your life?
+
+[[Back to Hallway West 1 Floor 1|Hallway West 1 Floor 1]]
+
+
+:: FFWH Door 6 {"position":"700,2600","size":"100,100"}
+\:: Door 6
+
+As you approach the sixth door on the left, a sense of unease washes over you, warning of danger lurking just beyond. Ignoring the unsettling feeling, you grasp the tarnished handle and push open the door, revealing a dimly lit chamber bathed in shadow.
+
+Inside, you catch a glimpse of movement, and your heart skips a beat as you come face to face with a monstrous creature, its twisted form writhing in the darkness. With a snarl, it advances towards you, hunger gleaming in its eyes. You must act quickly to escape this deadly encounter. Will you [[attack]] the creature, attempt to [[talk]] to it, or [[run]] before it's too late?
+
+[[Back to Hallway West 1 Floor 1|Hallway West 1 Floor 1]]
+
+
+:: FFWH Door 7 {"position":"575,2275","size":"100,100"}
+
+
+
+:: FFWH Door 8 {"position":"725,2125","size":"100,100"}
+
+
+
+:: FFWH Door 9 {"position":"925,2125","size":"100,100"}
+
+
+
+:: Forest Clearing {"position":"600,3100","size":"100,100"}
+Title: Forest Clearing
+
+You find yourself in a barren clearing, a stark reminder of the mage's malevolent influence. The ground is dry and cracked, and no plants grow here.
+
+[[Return to the forest entrance|Forest Entrance]]
+[[Go west|Forest West]]
+[[Go east|Forest East]]
+[[Go north|Forest North]]
+
+
+
+:: Forest Death North {"position":"700,3600","size":"100,100"}
+Title: Forest Death North
+
+Without a sharp item to free yourself, the roots and vines tighten their grip. You are consumed by the forest.
+
+[[Restart from the forest entrance|Forest Entrance]]
+
+
+
+:: Forest Death West {"position":"500,3600","size":"100,100"}
+Title: Forest Death West
+
+Ignoring the warning, you press on. Suddenly, the trees and plants come alive, their branches and roots wrapping around you. You struggle, but it's no use. The forest consumes you.
+
+[[Restart from the forest entrance|Forest Entrance]]
+
+
+
+:: Forest Death West Warning {"position":"400,3500","size":"100,100"}
+Title: Forest Death West Warning
+
+The forest grows darker and more menacing. You feel an overwhelming sense of dread. Continuing further west seems too dangerous.
+
+[[Return to the forest clearing|Forest Clearing]]
+[[Ignore the warning and continue west|Forest Death West]]
+
+
+
+:: Forest East {"position":"800,3200","size":"100,100"}
+Title: Forest East
+
+You head east and find a dark cave entrance. The air is cold and the darkness inside is impenetrable.
+
+[[Return to the forest clearing|Forest Clearing]]
+[[Enter the cave with a light source|Cave Entrance]]
+[[Enter the cave without a light source|Cave Death]]
+
+
+
+:: Forest Entrance {"position":"400,3100","size":"100,100"}
+Title: Forest Entrance
+
+You step into the forest, the trees towering above you and casting dark shadows. The air is thick with the scent of moss and decay. You can either turn back or venture further into the forest.
+
+[[Return to the tower base|Base of the Tower]]
+[[Explore further into the forest|Forest Clearing]]
+
+
+
+:: Forest Escape {"position":"800,3500","size":"100,100"}
+Title: Forest Escape
+
+You manage to cut yourself free, but your sword gets tangled in the roots and is lost.
+
+*You have lost your sword.*
+
+[[Return to the forest clearing|Forest Clearing]]
+
+
+
+:: Forest North {"position":"700,3400","size":"100,100"}
+Title: Forest North
+
+You head north, but the forest becomes increasingly malevolent. Suddenly, roots and vines lash out, wrapping around you. You need a sharp item to free yourself.
+
+[[Use a sharp item to free yourself|Forest Escape]]
+[[You don't have a sharp item|Forest Death North]]
+
+
+
+:: Forest Rucksack {"position":"500,3400","size":"100,100"}
+Title: Forest Rucksack
+
+You open the rucksack and find a dagger and a key. The dagger could be useful, and the key might open a locked door or chest somewhere.
+
+*You have gained a dagger and a key.*
+
+[[Return to the forest clearing|Forest Clearing]]
+[[Continue west despite the danger|Forest Death West Warning]]
+
+
+
+:: Forest West {"position":"400,3300","size":"100,100"}
+Title: Forest West
+
+You head west and come across a grim sight: the skeleton of a previous adventurer, his brown rucksack still intact.
+
+[[Return to the forest clearing|Forest Clearing]]
+[[Examine the rucksack|Forest Rucksack]]
+[[Continue west despite the danger|Forest Death West Warning]]
+
+
+
+:: Guardhouse {"position":"300,2700","size":"100,100"}
+\:: Guardhouse
+You cautiously approach the ruined guardhouse. The once-sturdy structure now lies in disrepair, its wooden beams rotted and its walls crumbling. As you step inside, you're greeted by the musty smell of decay.
+
+On the main floor, you see remnants of tables, chairs, and other furniture scattered about. A weapons rack stands against one wall, its contents mostly rusted and broken. A staircase in the corner leads up to the second floor.
+
+What would you like to do?
+
+[[Examine the table|Table]]
+[[Inspect the weapons rack|Weapons Rack]]
+[[Ascend the stairs to the second floor|Upstairs]]
+[[Return to the base of the tower|Base of the Tower]]
+
+
+
+:: Hallway West 1 Floor 1 {"position":"900,2700","size":"100,100"}
+Title: Hallway West 1 Floor 1
+
+You see six doors, three on each side of the hallway.
+
+[[Open door 1|Door stuck]]
+[[Open door 2|FFWH Door 2]]
+[[Open door 3|FFWH Door 3]]
+[[Open door 4|Door stuck]]
+[[Open door 5|Door stuck]]
+[[Open door 6|FFWH Door 6]]
+[[Continue down the hall|Hallway West 2 Floor 1]]
+[[Back to Entryway|Tower First Floor]]
+
+
+:: Hallway West 2 Floor 1 {"position":"700,2300","size":"100,100"}
+Title: Hallway West 2 Floor 1
+
+You reach the end of the hallway, where three doors stand before you, two on the left and one on the right.
+
+[[Open door 1|FFWH Door 7]]
+[[Open door 2|FFWH Door 8]]
+[[Open door 3|FFWH Door 9]]
+[[Back to Hallway West 1 Floor 1|Hallway West 1 Floor 1]]
+[[Back to Entryway|Tower First Floor]]
+
+
+:: Marsh {"position":"200,3300","size":"100,100"}
+Title: Marsh Entrance
+
+You step into the marsh, the ground becoming soft and unstable. The air is thick with the smell of damp earth and decaying vegetation. You can either turn back or venture further into the marsh.
+
+[[Return to the tower base|Base of the Tower]]
+[[Explore further into the marsh|Marsh Exploration 1]]
+
+
+
+:: Marsh Death {"position":"262.5,3800","size":"100,100"}
+Title: Marsh Death
+
+Ignoring the warning, you push further into the marsh. Suddenly, the ground gives way beneath you, and you find yourself sinking into the mire. Despite your struggles, you are unable to escape, and the marsh claims another victim.
+
+[[Restart from the tower base|Base of the Tower]]
+
+
+
+:: Marsh Exploration 1 {"position":"200,3425","size":"100,100"}
+Title: Marsh Exploration 1
+
+You carefully navigate through the marsh, stepping over patches of wet ground and avoiding hidden pools of water. Suddenly, you spot something glimmering in the muck.
+
+[[Take the item|Marsh Item]]
+[[Return to the tower base|Base of the Tower]]
+[[Explore further into the marsh|Marsh Exploration 2]]
+
+
+
+:: Marsh Exploration 2 {"position":"262.5,3550","size":"100,100"}
+Title: Marsh Exploration 2
+
+You press on, deeper into the marsh. The ground becomes increasingly treacherous, and the mist thickens. Despite your careful steps, you don't find anything of interest this time.
+
+[[Return to the tower base|Base of the Tower]]
+[[Explore further into the marsh|Marsh Warning]]
+
+
+
+:: Marsh Item {"position":"137.5,3550","size":"100,100"}
+Title: Marsh Item
+
+You reach down and pick up the glimmering item. It's a shiny scroll case.
+
+[[Open scroll case|Scroll Case]]
+[[Return to the tower base|Base of the Tower]]
+[[Explore further into the marsh|Marsh Exploration 2]]
+
+
+
+:: Marsh Warning {"position":"250,3675","size":"100,100"}
+Title: Marsh Warning
+
+The marsh grows darker and more dangerous. You feel the ground shift beneath you, and the air is heavy with the sense of impending doom. If you continue, it could be fatal.
+
+[[Return to the tower base|Base of the Tower]]
+[[Explore further into the marsh|Marsh Death]]
+
+
+
+:: Return to Village {"position":"100,2900","size":"100,100"}
+Title: Return to Village
+
+Are you sure you want to return to the village? This would mean giving up your quest to confront the mage.
+
+[[Yes, return to the village|End - Village]]
+[[No, stay and continue your quest|Base of the Tower]]
+
+
+
+:: Scroll Case {"position":"100,3700","size":"100,100"}
+Title: Scroll Case
+
+The only way to open the case is to break it open. Inside you find a small, ratty piece of parchment that simply reads, "SCION."
+
+[[Return to the tower base|Base of the Tower]]
+[[Explore further into the marsh|Marsh Exploration 2]]
+
+
+:: Search Cots {"position":"500,2500","size":"100,100"}
+\:: Search Cots
+You search through the decrepit cots, but find nothing of value. The fabric is moth-eaten, and the stuffing has long since deteriorated. It seems this room has been abandoned for quite some time.
+
+Disappointed by your lack of findings, you decide to explore elsewhere.
+
+[[Continue exploring the guardhouse|Guardhouse]]
+
+
+:: Table {"position":"200,2600","size":"100,100"}
+\:: Table
+You approach the dilapidated table and sift through the debris scattered across its surface. Amidst the rubble, you find a weathered piece of parchment. It appears to be a report written by one of the guards stationed here.
+
+The report details routine patrols and observations, but there's an additional note scrawled hastily at the bottom. It mentions a visit from a mysterious mage inquiring about the nearby tower. The guard's note indicates that they chased the mage away, declaring the tower off-limits.
+
+What will you do with the note?
+
+[[Continue exploring the guardhouse|Guardhouse]]
+
+
+:: Take Potion {"position":"600,2700","size":"100,100"}
+\:: Take Potion
+You carefully retrieve the potion vial and inspect it closely. The liquid inside glimmers softly, promising healing properties to whoever consumes it.
+
+With the potion in hand, you continue your exploration of the guardhouse.
+
+[[Continue exploring the guardhouse|Guardhouse]]
+
+
+:: Tower Entrance {"position":"400,2900","size":"100,100"}
+\:: Tower Entrance
+You stand before the imposing Tower of Valthor, its massive iron door looming before you. The surface of the door is etched with intricate runes, and a sense of foreboding emanates from within.
+
+<<if $has_password>>
+The door remains steadfastly closed, an impenetrable barrier barring your entry. You know that without the password, gaining access to the tower will be impossible.
+<<else>>
+[[Enter the password "SCION" to unlock the door|Enter Password]]
+<<endif>>
+
+[[Return to the base of the tower|Base of the Tower]]
+
+
+
+
+
+:: Tower First Floor {"position":"1100,2600","size":"100,100"}
+Title: Tower First Floor
+
+As you step through the threshold, the heavy door swings shut behind you with a resounding thud, sealing you within the tower's mysterious confines. You find yourself in a spacious entryway, dimly lit by flickering torches mounted on the walls. Strange statues stand sentinel in the corners, their stone faces twisted into grotesque expressions, while ornate paintings line the walls, their subjects obscured by layers of dust. Threadbare rugs cover the stone floor, muffling your footsteps as you explore.
+
+To the west, a narrow hallway stretches into the darkness, its passage flanked by rows of closed doors. A single door stands to the east, its surface weathered and worn, while another door beckons to the north, its ancient wood groaning faintly on its hinges.
+
+What do you do?
+
+[[Explore the hallway to the west|Hallway West 1 Floor 1]]
+[[Approach the door to the east|Door East]]
+[[Investigate the door to the north|Door North]]
+
+
+:: Upstairs {"position":"400,2600","size":"100,100"}
+\:: Upstairs
+You ascend the creaky staircase to the second floor of the guardhouse. The air feels stale and stagnant here, and dust motes dance in the dim light filtering through the broken windows.
+
+In the corner of the room, you spot a row of cots, their mattresses tattered and springs exposed. Near the back wall, a massive chest sits untouched, its lid slightly ajar.
+
+What will you do?
+
+[[Search the cots|Search Cots]]
+[[Examine the chest|Chest]]
+[[Return to the main floor|Guardhouse]]
+
+
+:: Weapons Rack {"position":"300,2500","size":"100,100"}
+\:: Weapons Rack
+You inspect the weapons rack, but the years of neglect have taken their toll. Most of the weapons are rusted beyond repair, their edges dull and their handles rotted.
+
+[[Leave the dagger and continue exploring|Guardhouse]]
+
+
+:: attack {"position":"625,2450","size":"100,100"}
+
+
+
+:: run {"position":"875,2275","size":"100,100"}
+
+
+
+:: talk {"position":"750,2425","size":"100,100"}
+
